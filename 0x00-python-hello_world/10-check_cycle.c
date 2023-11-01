@@ -13,10 +13,10 @@ int check_cycle(listint_t *list)
 	listint_t *fp, *sp;
 	int res = 0;
 
-	if (list->next == NULL || list->next->next == NULL)
+	if (list == NULL || list->next == NULL)
 		return (0);
 
-	fp = list->next->next, sp = list->next;
+	fp = list->next, sp = list;
 
 	while (sp != NULL)
 	{

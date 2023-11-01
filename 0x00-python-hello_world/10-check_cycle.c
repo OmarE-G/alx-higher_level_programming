@@ -1,7 +1,4 @@
-#ifndef LISTS_H
 #include "lists.h"
-#define LISTS_H
-#endif
 /**
  * check_cycle - checks if a singly linked list has a cycle in it
  * @list: pointer to the head of the list{
@@ -18,7 +15,7 @@ int check_cycle(listint_t *list)
 
 	fp = list->next, sp = list;
 
-	while (sp != NULL)
+	while (fp != NULL)
 	{
 		if (sp == fp)
 		{

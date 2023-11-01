@@ -1,5 +1,7 @@
+#ifndef LISTS_H
 #include "lists.h"
-
+#define LISTS_H
+#endif
 /**
  * check_cycle - checks if a singly linked list has a cycle in it
  * @list: pointer to the head of the list{

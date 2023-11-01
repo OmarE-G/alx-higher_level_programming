@@ -10,9 +10,13 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *fp = list->next->next, *sp = list->next;
+	listint_t *fp, *sp;
 	int res = 0;
 
+	if (list->next == NULL || list->next->next == NULL)
+		return (0);
+
+	fp = list->next->next, sp = list->next;
 
 	while (sp != NULL)
 	{
@@ -23,7 +27,6 @@ int check_cycle(listint_t *list)
 		}
 
 		fp = fp->next->next, sp = sp->next;
-
 	}
 
 	return (res);

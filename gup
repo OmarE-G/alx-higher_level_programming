@@ -1,0 +1,11 @@
+#!/bin/bash
+git add .
+m="New commit"
+if [ "$#" -eq 1 ]
+then
+	m=$1
+fi
+git commit -m "$m"
+git push
+
+

@@ -22,10 +22,10 @@ class Node:
         if not (type(value) is int):
             raise TypeError("data must be an integer")
         self.__data = value
-
+        
     @next.setter
     def next(self, value):
-        if not (isinstance(value, Node)):
+        if not (type(value) in [Node, type(None)]):
             raise TypeError("next_node must be a Node object")
         self.__next = value
 

@@ -13,7 +13,7 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
-        return (self.area() > 0) * (self.width + self.height)
+        return (self.area() > 0) * (self.width * 2 + self.height * 2)
 
     @property
     def width(self):

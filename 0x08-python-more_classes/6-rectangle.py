@@ -14,6 +14,7 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
+        number_of_instances -= 1
 
     def __str__(self):
         str = ""

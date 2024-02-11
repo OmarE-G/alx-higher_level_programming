@@ -15,6 +15,8 @@ class Rectangle:
             str += '#' * self.width
             if i != self.height - 1:
                 str += '\n'
+        if self.area() == 0:
+            str = ""
         return str
 
     def area(self):

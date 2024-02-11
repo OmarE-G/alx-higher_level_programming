@@ -5,17 +5,17 @@
 
 class Node:
     """Node Class for singly linked list"""
-    def __init__(self, data, next=None):
+    def __init__(self, data, next_node=None):
         self.data = data
-        self.next = next
+        self.next_node = next_node
 
     @property
     def data(self):
         return self.__data
 
     @property
-    def next(self):
-        return self.__next
+    def next_node(self):
+        return self.__next_node
 
     @data.setter
     def data(self, value):
@@ -23,11 +23,11 @@ class Node:
             raise TypeError("data must be an integer")
         self.__data = value
         
-    @next.setter
-    def next(self, value):
+    @next_node.setter
+    def next_node(self, value):
         if not (type(value) in [Node, type(None)]):
-            raise TypeError("next_node must be a Node object")
-        self.__next = value
+            raise TypeError("next_node_node must be a Node object")
+        self.__next_node = value
 
 
 class SinglyLinkedList:
@@ -40,7 +40,7 @@ class SinglyLinkedList:
         curr = self.__head
         while curr is not None:
             result.append(str(curr.data))
-            curr = curr.next
+            curr = curr.next_node
         return '\n'.join(result)
 
     def sorted_insert(self, value):
@@ -50,14 +50,14 @@ class SinglyLinkedList:
         else:
             curr = self.__head
             if new_node.data <= curr.data:
-                new_node.next = curr
+                new_node.next_node = curr
                 self.__head = new_node
             else:
-                while curr.next is not None:
-                    if curr.next.data >= new_node.data:
-                        new_node.next = curr.next
-                        curr.next = new_node
+                while curr.next_node is not None:
+                    if curr.next_node.data >= new_node.data:
+                        new_node.next_node = curr.next_node
+                        curr.next_node = new_node
                         break
-                    curr = curr.next
+                    curr = curr.next_node
                 else:
-                    curr.next = new_node
+                    curr.next_node = new_node

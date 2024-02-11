@@ -1,0 +1,71 @@
+>>> x = [[1, 2], [2, 3], [4, 5]]
+>>> mt = __import__('2-matrix_divided').matrix_divided
+>>> x = [[1, 2], [2, 3], [4, 5]]
+>>> mt(x, 2.2)
+[[0.45, 0.91], [0.91, 1.36], [1.82, 2.27]]
+>>> mt(x, 1)
+[[1.0, 2.0], [2.0, 3.0], [4.0, 5.0]]
+>>> mt(x, float(nan))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'nan' is not defined
+>>> mt(x, float('nan'))
+[[nan, nan], [nan, nan], [nan, nan]]
+>>> mt(x, float('inf'))
+[[0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
+>>> x = [[1, 2], [2, 3], [4, 5]]
+>>> mt(x, float(-1))
+[[-1.0, -2.0], [-2.0, -3.0], [-4.0, -5.0]]
+>>> mt(x, float(-1.2))
+[[-0.83, -1.67], [-1.67, -2.5], [-3.33, -4.17]]
+>>> mt(x, 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 20, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+>>> mt(x, 0.0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 20, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+>>> mt(x, x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 18, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+>>> mt(x, 'a')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 18, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+>>> x = [[1, 2], [2, 3], [4]]
+>>> mt(x, 1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 13, in matrix_divided
+    raise TypeError(
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> x = [[1, 2], [2, 3], ['a', 'b']]
+>>> mt(x, 1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 13, in matrix_divided
+    raise TypeError(
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> mt(x, 'a')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 13, in matrix_divided
+    raise TypeError(
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> x = [[1, 2], [2, 3], [1, 2]]
+>>> mt(x, 'a')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/omar/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 18, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number

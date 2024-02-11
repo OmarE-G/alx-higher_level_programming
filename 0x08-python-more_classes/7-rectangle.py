@@ -18,14 +18,14 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
 
     def __str__(self):
-        str = ""
+        st = ""
         for i in range(self.height):
-            str += Rectangle.print_symbol * self.width
+            st += str(self.print_symbol) * self.width
             if i != self.height - 1:
-                str += '\n'
+                st += '\n'
         if self.area() == 0:
-            str = ""
-        return str
+            st = ""
+        return st
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.width, self.height)

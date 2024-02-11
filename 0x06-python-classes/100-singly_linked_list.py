@@ -26,7 +26,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         if not (type(value) in [Node, type(None)]):
-            raise TypeError("next_node_node must be a Node object")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 

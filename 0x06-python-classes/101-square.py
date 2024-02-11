@@ -10,10 +10,12 @@ class Square:
         self.position = position
 
     def __str__(self):
-        str = '\n' * self.position[1] * (self.size != 0)
+        str = '\n' * self.position[1] * int(self.size != 0)
         for i in range(self.size):
-            str += self.position[0] * ' ' + '#' * self.size + '\n'
-        return str + '\n' * int(self.size == 0)
+            str += self.position[0] * ' ' + '#' * self.size
+            if i != self.size - 1:
+                str += '\n'
+        return str
 
     def area(self):
         return self.__size ** 2
@@ -49,6 +51,3 @@ class Square:
                 and all((type(i) is int and i >= 0) for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
-
-
-print(Square(0, (0, 5)))

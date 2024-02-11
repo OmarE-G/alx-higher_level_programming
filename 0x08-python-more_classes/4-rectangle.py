@@ -20,7 +20,7 @@ class Rectangle:
         return str
 
     def __repr__(self):
-        return "Rectangle(int({}), int({}))".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.width, self.height)
 
     def area(self):
         return self.width * self.height

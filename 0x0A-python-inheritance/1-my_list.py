@@ -2,7 +2,7 @@
 """Class my list"""
 
 
-class my_list(list):
+class MyList(list):
     """list class with print sorted"""
     def print_sorted(self):
         """method to sort a list"""

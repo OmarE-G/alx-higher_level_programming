@@ -5,6 +5,3 @@
 def lookup(obj):
     """function to lookup attributes"""
     return list(obj.__dict__)
-
-
-print(lookup(int))

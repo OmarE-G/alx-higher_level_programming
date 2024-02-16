@@ -1,65 +1,57 @@
->>> geo = __import__("7-base_geometry").BaseGeometry
->>> ob = geo()
->>> ob.integer_validator("a", 1)
->>> ob.integer_validator("a", 0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
-    raise ValueError("{} must be greater than 0".format(name))
-ValueError: a must be greater than 0
->>> ob.integer_validator("a", -1)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
-    raise ValueError("{} must be greater than 0".format(name))
-ValueError: a must be greater than 0
->>> ob.integer_validator("a", 1)
->>> ob.integer_validator("a", 100)
->>> ob.area()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 12, in area
-    raise Exception("area() is not implemented")
-Exception: area() is not implemented
->>> ob.integer_validator("a")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> ob.integer_validator("a", None)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
-TypeError: a must be an integer
->>> ob.integer_validator("a", (1,1))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
-TypeError: a must be an integer
->>> ob.integer_validator("a", (1,))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
-TypeError: a must be an integer
->>> ob.integer_validator("a", [1])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
-TypeError: a must be an integer
->>> ob.integer_validator("a", {1, 2})
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/omar/ALX/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
-TypeError: a must be an integer
->>> ob.integer_validator()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+# The ``7-base_geometry`` module
 
 
-if __name__ == "__main__":
-    doctest.testmod(optionflags=doctest.ELLIPSIS)
+Import the class from the module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Check Style:
+	>>> import pycodestyle
+	>>> import sys
+
+Create a StyleGuide instance:
+	>>> style_guide = pycodestyle.StyleGuide()
+
+Define the files or directories you want to check:
+	>>> files_to_check = ['7-base_geometry.py']
+
+Check the style of the specified files:
+	>>> result = style_guide.check_files(files_to_check)
+
+Check the results:
+	>>> result.total_errors
+	0
+
+Checking for module docstring:
+	>>> module_doc = __import__("7-base_geometry").__doc__
+	>>> len(module_doc) > 1
+	True
+
+Checking for class docstring:
+	>>> function_doc = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(function_doc) > 1
+	True
+
+Check for simple use:
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+	>>> bg.integer_validator("width", 89)
+
+	>>> try:
+	...	bg.integer_validator("name", "John")
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[TypeError] name must be an integer
+	>>> try:
+	...	 bg.integer_validator("age", 0)
+	... except Exception as e:
+	...	 print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[ValueError] age must be greater than 0
+	>>> try:
+	...	 bg.integer_validator("distance", -4)
+	... except Exception as e:
+	...	 print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[ValueError] distance must be greater than 0

@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""lookup function"""
+"""
+lookup function
+"""
 
 
 def lookup(obj):
     """function to lookup attributes"""
-    return list(obj.__dict__)
+    return dir(obj)

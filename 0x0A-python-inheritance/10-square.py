@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
+===========
 Square geometry module
+===========
 """
 R = __import__('9-Rectangle').Rectangle
 

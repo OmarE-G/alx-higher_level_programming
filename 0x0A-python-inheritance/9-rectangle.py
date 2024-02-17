@@ -17,4 +17,4 @@ class Rectangle(BG):
         return self.__width * self.__height
 
     def __str__(self):
-        return ("[RECTANGLE] {}/{}".format(self.__width, self.__height))
+        return ("[Rectangle] {}/{}".format(self.__width, self.__height))

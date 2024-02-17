@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-BG = __import__('7-base_geometry').BaseGeometry
-
 """
 Rectangle geometry module
 """
+BG = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BG):

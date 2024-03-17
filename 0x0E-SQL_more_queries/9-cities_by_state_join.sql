@@ -1,3 +1,5 @@
--- show cities of california
+-- show cities 
 
-SELECT * FROM hbtn_0d_usa.cities WHERE state_id = (SELECT id FROM hbtn_0d_usa.states WHERE name = 'California');
+SELECT cities.id, cities.name, states.name FROM cities
+    JOIN states ON cities.state_id=states.id
+    ORDER BY cities.id

@@ -10,7 +10,7 @@ if (process.argv.length < 4) {
   }
   for (let i = 2; i < process.argv.length; i++) {
     if (parseInt(process.argv[i]) > smx && parseInt(process.argv[i]) != mx) {
-     smx = parseInt(process.argv[i]);
+      smx = parseInt(process.argv[i]);
     }
   }
   console.log(smx);

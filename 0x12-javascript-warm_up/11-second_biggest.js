@@ -4,9 +4,12 @@ if (process.argv.length < 4) {
 } else {
   let mx = -Infinity; let smx = -Infinity;
   for (let i = 2; i < process.argv.length; i++) {
-    if (process.argv[i] > mx) {
+    if (parseInt(process.argv[i]) > mx) {
       smx = mx;
-      mx = process.argv[i];
+      mx = parseInt(process.argv[i]);
+      if (smx === -Infinity){
+        smx = mx;
+      }
     }
   }
   console.log(smx);

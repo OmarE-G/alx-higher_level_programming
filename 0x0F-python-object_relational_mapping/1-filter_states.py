@@ -13,3 +13,7 @@ if __name__ == "__main__":
         WHERE SUBSTR(states.name, 1, 1)='N' ORDER BY states.id")
     for i in range(num_rows):
         print(cur.fetchone())
+
+
+cur.close()
+db.close()

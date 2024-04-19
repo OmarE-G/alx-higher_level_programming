@@ -11,3 +11,6 @@ if __name__ == "__main__":
     num_rows = cur.execute("SELECT * FROM states ORDER BY states.id")
     for i in range(num_rows):
         print(cur.fetchone())
+
+cur.close()
+db.close()

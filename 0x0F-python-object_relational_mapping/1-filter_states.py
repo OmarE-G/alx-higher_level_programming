@@ -10,7 +10,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     num_rows = cur.execute(
         "SELECT * FROM states \
-        WHERE SUBSTR(states.name, 1, 1)='N' ORDER BY states.id")
+        WHERE BINARY SUBSTR(states.name, 1, 1)='N' ORDER BY states.id")
     for i in range(num_rows):
         print(cur.fetchone())
 

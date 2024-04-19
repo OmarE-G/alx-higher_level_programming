@@ -1,20 +1,16 @@
 #!/usr/bin/python3
-"""lists all states from the database with IDs in ascending order"""
-
+"""lists all states from the database"""
 import MySQLdb
-import sys
+from sys import argv
+
 
 if __name__ == "__main__":
-    userName = sys.argv[1]
-    passwd = sys.argv[2]
-    table = sys.argv[3]
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=argv[1], passwd=argv[2], db=argv[3])
+    cur = db.cursor()
+    num_rows = cur.execute("SELECT * FROM states ORDER BY states.id")
+    for i in range(num_rows):
+        print(cur.fetchone())
 
-    conn = MySQLdb.connect(host="localhost", port=3306, user=userName,
-                           passwd=passwd, db=table, charset="utf8")
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
     cur.close()
-    conn.close()
+    db.close()

@@ -12,5 +12,5 @@ if __name__ == "__main__":
     for i in range(num_rows):
         print(cur.fetchone())
 
-cur.close()
-db.close()
+    cur.close()
+    db.close()

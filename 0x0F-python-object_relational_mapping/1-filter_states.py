@@ -15,5 +15,5 @@ if __name__ == "__main__":
         print(cur.fetchone())
 
 
-cur.close()
-db.close()
+    cur.close()
+    db.close()

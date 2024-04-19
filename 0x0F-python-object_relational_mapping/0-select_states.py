@@ -10,4 +10,4 @@ if __name__ == "__main__":
     cur = db.cursor()
     num_rows = cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     for i in range(num_rows):
-        print(cur.fetchone())
+        print(cur.fetchall())

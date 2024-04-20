@@ -6,11 +6,9 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 if __name__ == '__main__':
-    print('here')
     usr = argv[1]
     pwd = argv[2]
     db = argv[3]
-    print('here')
     engine = create_engine('mysql://{}:{}@localhost:3306/{}'
                            .format(usr, pwd, db))
 

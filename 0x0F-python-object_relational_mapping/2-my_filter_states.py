@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     num_rows = cur.execute(
         "SELECT * FROM states \
-        WHERE name='{}'".format(state_name))
+        WHERE name LIKE BINARY '{}'".format(state_name))
     for i in range(num_rows):
         print(cur.fetchone())
 

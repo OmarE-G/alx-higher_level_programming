@@ -18,7 +18,7 @@ if __name__ == '__main__':
     sess = Sess()
 
     row = sess.query(State).filter(State.name == state_name).first()
-    if(row is None):
+    if (row is None):
         print("Nothing")
     else:
         print(row.id)

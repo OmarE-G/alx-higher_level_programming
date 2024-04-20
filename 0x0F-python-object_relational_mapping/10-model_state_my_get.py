@@ -19,6 +19,6 @@ if __name__ == '__main__':
 
     row = sess.query(State).filter(State.name == state_name).first()
     if (row is None):
-        print("Nothing")
+        print("Not found")
     else:
         print(row.id)

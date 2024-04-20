@@ -17,4 +17,8 @@ if __name__ == '__main__':
     sess = Sess()
 
     row = sess.query(State).order_by(State.id).limit(1)
-    print(f"{row.id}: {row.name}")
+    if(row is not None):
+        print(f"{row.id}: {row.name}")
+    else:
+        print("Nothing")
+        

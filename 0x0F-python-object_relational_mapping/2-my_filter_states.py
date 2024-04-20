@@ -12,7 +12,7 @@ if __name__ == "__main__":
     state_name = argv[4]
 
     num_rows = cur.execute("SELECT * FROM states \
-        WHERE name LIKE BINARY '{}' ORDER BY cities.id".format(state_name))
+        WHERE name LIKE BINARY '{}'".format(state_name))
 
     for i in range(num_rows):
         print(cur.fetchone())

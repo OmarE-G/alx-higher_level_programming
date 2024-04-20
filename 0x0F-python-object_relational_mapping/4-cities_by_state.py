@@ -9,8 +9,8 @@ if __name__ == "__main__":
                          user=argv[1], passwd=argv[2], db=argv[3])
     cur = db.cursor()
 
-
-    sql_query = "SELECT * FROM cities"
+    sql_query = "SELECT cities.id, cities.name, states.name \
+        FROM cities JOIN states ON states.id=state_id"
     num_rows = cur.execute(sql_query)
 
     for i in range(num_rows):

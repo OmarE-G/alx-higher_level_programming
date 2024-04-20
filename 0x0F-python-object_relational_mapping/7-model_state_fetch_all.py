@@ -12,7 +12,7 @@ if __name__ == '__main__':
     db = argv[3]
     print('here')
     engine = create_engine('mysql://{}:{}@localhost:3306/{}'
-                           .format(usr, pwd, db), echo=True)
+                           .format(usr, pwd, db))
 
     conn = engine.connect()
     Sess = sessionmaker(bind=engine)

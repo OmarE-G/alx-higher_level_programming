@@ -16,5 +16,5 @@ if __name__ == '__main__':
     Sess = sessionmaker(bind=engine)
     sess = Sess()
 
-    for row in sess.query(State).order_by(State.id).limit(1):
-        print(f"{row.id}: {row.name}")
+    row = sess.query(State).order_by(State.id).limit(1)
+    print(f"{row.id}: {row.name}")

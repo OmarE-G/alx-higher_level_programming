@@ -11,9 +11,10 @@ if __name__ == "__main__":
 
     state_name = argv[4]
 
-    num_rows = cur.execute(
-        "SELECT * FROM states \
-        WHERE name LIKE BINARY '{}'".format(state_name))
+
+    sql_query = "SELECT * FROM states WHERE name LIKE BINARY %s"
+    num_rows = cur.execute(sql_query, (state_name,))
+    
     for i in range(num_rows):
         print(cur.fetchone())
 

@@ -21,6 +21,4 @@ if __name__ == '__main__':
     if (row is None):
         print("Not found")
     else:
-        
-        
         print(row.id)

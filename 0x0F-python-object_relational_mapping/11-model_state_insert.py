@@ -18,3 +18,4 @@ if __name__ == '__main__':
     new_state = State(name='Louisiana')
     sess.add(new_state)
     sess.commit()
+    print(new_state.id)

@@ -1,3 +1,4 @@
 #!/bin/bash
-curl "$1" -si  | grep -E "Content-Length:\s+(\d*)" | cut -d ' ' -f 2
+# response body size
+curl "$1" -si  | grep -i 'Content-Length' | cut -d ' ' -f 2
 

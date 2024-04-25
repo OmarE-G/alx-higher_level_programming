@@ -1,3 +1,3 @@
 #!/bin/bash
 # DELETE
-curl -si "$1" -X "GET"
+curl -siL "$1" -X "OPTIONS" | grep 'allow:' | cut -d ' ' -f 2

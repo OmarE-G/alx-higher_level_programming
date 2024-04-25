@@ -1,3 +1,3 @@
 #!/bin/bash
 # response body
-curl -s "$1"
+R=$(curl "$1" -sL  -o /dev/null -w %{http_code}); [ $R -eq 200 ] && curl -sL "$1"

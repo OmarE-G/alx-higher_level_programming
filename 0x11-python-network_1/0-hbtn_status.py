@@ -6,7 +6,7 @@ import urllib.request
 
 
 if __name__ == '__main__':
-	'''get request'''
+    '''get request'''
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as r:
         print(f"\t- type: {type(r.read())}")
         print(f"\t- content: {r.read()}")

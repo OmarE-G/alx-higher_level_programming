@@ -4,7 +4,7 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    query = 1
+    query = ""
     if len(sys.argv) > 1:
         query = sys.argv[1]
     data = {'q': query}
@@ -12,7 +12,7 @@ if __name__ == '__main__':
     try:
         print(f"[{r.json()['id']}] {r.json()['name']}")
 
-    except requests.exceptions.JSONDecodeError:
+    except r.exceptions.JSONDecodeError:
         print("Not a valid JSON")
 
     except KeyError:

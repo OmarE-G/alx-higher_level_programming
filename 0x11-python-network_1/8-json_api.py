@@ -12,7 +12,7 @@ if __name__ == '__main__':
     try:
         print(f"[{r.json()['id']}] {r.json()['name']}")
 
-    except r.exceptions.JSONDecodeError:
+    except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
 
     except KeyError:

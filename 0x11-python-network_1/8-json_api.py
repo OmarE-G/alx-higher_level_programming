@@ -10,7 +10,7 @@ if __name__ == '__main__':
     data = {'q': query}
     r = requests.post('http://0.0.0.0:5000/search_user', data)
     try:
-        print(f"{r.json()['id']} {r.json()['name']}")
+        print(f"[{r.json()['id']}] {r.json()['name']}")
 
     except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")

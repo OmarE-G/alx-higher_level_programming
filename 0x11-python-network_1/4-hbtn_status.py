@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''get web page'''
 import requests
 
 

@@ -2,7 +2,7 @@
 '''api request'''
 import requests
 import sys
-from requests.exceptions import JSONDecodeError as JDE
+from json.decoder import JSONDecodeError as JDE
 
 
 if __name__ == '__main__':

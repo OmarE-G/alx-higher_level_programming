@@ -2,7 +2,6 @@
 '''api request'''
 import requests
 import sys
-from requests.exceptions import JSONDecodeError as JDE
 
 
 if __name__ == '__main__':
@@ -14,7 +13,7 @@ if __name__ == '__main__':
     try:
         print(f"[{r.json()['id']}] {r.json()['name']}")
 
-    except JDE:
+    except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
 
     except KeyError:
